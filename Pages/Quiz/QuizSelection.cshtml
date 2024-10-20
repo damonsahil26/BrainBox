@@ -9,9 +9,9 @@
     <form method="post" asp-page-handler="RedirectToPage">
         <div>
             <div>
-            <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px; color:fuchsia;">Category</h1>
+                <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px; color:fuchsia;">Category</h1>
 
-                <select class="form-control custom-input mt-3" style="width:25%;">
+                <select class="form-control custom-input mt-3" style="width:25%;" asp-for="UserSelection.Category">
                 <option value="any">Any Category</option>
                 <option value="9">General Knowledge</option>
                 <option value="10">Entertainment: Books</option>
@@ -34,7 +34,7 @@
             <div>
                 <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px;  color:deepskyblue;">Difficulty</h1>
 
-                <select class="form-control custom-input mt-3" style="width:25%;" autocomplete="username">
+                <select class="form-control custom-input mt-3" style="width:25%;" asp-for="UserSelection.Difficulty" autocomplete="username">
                     <option value="any">Any Difficulty</option>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -44,7 +44,7 @@
             <div>
                 <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px;  color:mediumaquamarine;">Type</h1>
 
-                <select class="form-control custom-input mt-3" style="width:25%;" autocomplete="username">
+                <select class="form-control custom-input mt-3" style="width:25%;" asp-for="UserSelection.Type" autocomplete="username">
                     <option value="any">Any Type</option>
                     <option value="multiple">Multiple Choice</option>
                     <option value="boolean">True / False</option>
@@ -54,10 +54,11 @@
             <div>
                 <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px;  color:violet;">No. of questions</h1>
 
-                <input class="form-control custom-input mt-3" min="10" max="20" value="10" type="number" style="width:25%;">
+                <input class="form-control custom-input mt-3" min="10" max="20" value="10" type="number" asp-for="UserSelection.NoofQuestions" style="width:25%;">
             </div>
         </div>
-        <button class="btn btn-danger mt-5">Start</button>
+
+        <button class="btn btn-danger mt-5" type="submit">Start</button>
 
     </form>
 </div>
