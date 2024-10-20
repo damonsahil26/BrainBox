@@ -1,0 +1,65 @@
+﻿@page
+@model BrainBox.Pages.Quiz.QuizSelectionModel
+
+<div class="text-start" style="margin-top:100px;">
+    <h1 class="display-4 bungee-spice-regular">Hi,</h1>
+    <h1 class="display-4 bungee-spice-regular">@User.FindFirst("FirstName")!.Value</h1>
+
+    <h1 class="display-4 caveat-pacifico-regular" style="color:snow; font-size:xx-large;">Please select from below options :</h1>
+    <form method="post" asp-page-handler="RedirectToPage">
+        <div>
+            <div>
+            <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px; color:fuchsia;">Category</h1>
+
+                <select class="form-control custom-input mt-3" style="width:25%;">
+                <option value="any">Any Category</option>
+                <option value="9">General Knowledge</option>
+                <option value="10">Entertainment: Books</option>
+                <option value="11">Entertainment: Film</option>
+                <option value="14">Entertainment: Television</option>
+                <option value="15">Entertainment: Video Games</option>
+                <option value="18">Science: Computers</option>
+                <option value="19">Science: Mathematics</option>
+                <option value="20">Mythology</option>
+                <option value="21">Sports</option>
+                <option value="22">Geography</option>
+                <option value="23">History</option>
+                <option value="26">Celebrities</option>
+                <option value="27">Animals</option>
+                <option value="29">Entertainment: Comics</option>
+                <option value="30">Science: Gadgets</option>
+                <option value="32">Entertainment: Cartoon &amp; Animations</option>
+            </select>
+            </div>
+            <div>
+                <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px;  color:deepskyblue;">Difficulty</h1>
+
+                <select class="form-control custom-input mt-3" style="width:25%;" autocomplete="username">
+                    <option value="any">Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div>
+                <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px;  color:mediumaquamarine;">Type</h1>
+
+                <select class="form-control custom-input mt-3" style="width:25%;" autocomplete="username">
+                    <option value="any">Any Type</option>
+                    <option value="multiple">Multiple Choice</option>
+                    <option value="boolean">True / False</option>
+                </select>
+            </div>
+
+            <div>
+                <h1 class="caveat-pacifico-regular" style="font-size:xxx-large; margin-top:20px;  color:violet;">No. of questions</h1>
+
+                <input class="form-control custom-input mt-3" min="10" max="20" value="10" type="number" style="width:25%;">
+            </div>
+        </div>
+        <button class="btn btn-danger mt-5">Start</button>
+
+    </form>
+</div>
+
+

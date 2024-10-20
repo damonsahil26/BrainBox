@@ -12,6 +12,10 @@ namespace BrainBox.Pages
             _logger = logger;
         }
 
+        public IActionResult OnPostRedirectToPage()
+        {
+            return RedirectToPage("/Quiz/QuizSelection"); // Change "AnotherPage" to the page you want to redirect to
+        }
         public void OnGet()
         {
 
