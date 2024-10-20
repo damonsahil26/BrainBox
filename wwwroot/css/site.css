@@ -69,4 +69,14 @@ body {
     font-style: normal;
 }
 
+.custom-input {
+    background-color: black;
+    color:white;/* Default text color */
+}
 
+    .custom-input:focus {
+        background-color: black; /* Text color on focus */
+        outline: none; /* Remove default focus outline, optional */
+        border-color: #4A90E2;
+        color:white;/* Change the border color on focus if desired */
+    }
