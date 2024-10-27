@@ -1,4 +1,5 @@
 using BrainBox.Data;
+using BrainBox.Hubs;
 using BrainBox.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -16,6 +17,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddTransient<IEmailSender, NoOpEmailSender>();
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<Player>, CustomClaimsPrincipalFactory>();
 
+
 builder.Services.AddIdentity<Player, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
@@ -26,7 +28,13 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 builder.Services.AddRazorPages();
 
+//Add SignalR to project
+builder.Services.AddSignalR();
+
 var app = builder.Build();
+
+//Map request to hub
+app.MapHub<UserHub>("/hubs/UsersCount");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

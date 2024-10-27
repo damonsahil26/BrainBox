@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Nabla&display=swap" rel="stylesheet">
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/activeUsers.js"></script>
 
 
 </head>
@@ -47,10 +49,19 @@
     </div>
 
     <footer class="border-top footer text-muted" style="background-color:ghostwhite">
-        <div class="container caveat-pacifico-regular">
-            &copy; 2024 - BrainBox - <a href="https://github.com/damonsahil26">Sahil Malhotra</a>
+        <div class="container d-flex justify-content-between caveat-pacifico-regular">
+            <div>
+                &copy; 2024 - BrainBox - <a href="https://github.com/damonsahil26">Sahil Malhotra</a>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div id="active-users">
+                    Players online - 0
+                </div>
+            }     
         </div>
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
