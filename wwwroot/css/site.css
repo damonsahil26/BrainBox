@@ -117,3 +117,11 @@ body {
         border-right-color: transparent;
     }
 }
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
